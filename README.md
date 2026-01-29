@@ -104,6 +104,9 @@ I created a new virtual machine with the following configuration:
 * Adapter 1 → NAT
 
 * Adapter 2 → Internal Network
+  
+![Lab screenshot](https://i.imgur.com/XvEfgZV.png)
+
 
 ### Step 3: Install Windows Server on DC
 
@@ -121,6 +124,8 @@ After installation:
 
 * DNS: 172.16.0.1 (self)
 
+![Lab screenshot](https://i.imgur.com/LKQuMaB.png)
+
 ## Phase 2: Active Directory Setup
 
 ### Step 4: Install Active Directory Domain Services
@@ -133,6 +138,10 @@ I then promoted the server to a Domain Controller and created a new forest:
 
 After promotion, the server rebooted as the Domain Controller.
 
+![Lab screenshot](https://i.imgur.com/b5WnCWc.png)
+
+![Lab screenshot](https://i.imgur.com/UYlgeox.png)
+
 ### Step 5: Configure NAT Routing
 
 I installed Routing and Remote Access on DC and configured NAT:
@@ -142,6 +151,10 @@ I installed Routing and Remote Access on DC and configured NAT:
 * Internal interface: Internal Network adapter
 
 This allows internal machines to access the internet through DC.
+
+![Lab screenshot](https://i.imgur.com/GVavBqg.png)
+
+![Lab screenshot](https://i.imgur.com/kzHfaMB.png)
 
 ### Step 6: Configure DHCP
 
@@ -154,6 +167,10 @@ I installed the DHCP Server role on DC and created a scope for the internal netw
 * DNS: 172.16.0.1
 
 This allows all internal clients to automatically receive IP configuration.
+
+![Lab screenshot](https://i.imgur.com/lXm8wnU.png)
+
+![Lab screenshot](https://i.imgur.com/UNphuPu.png)
 
 ## Phase 3: User Automation with PowerShell
 
@@ -171,6 +188,10 @@ Process:
 
 This simulates real enterprise onboarding automation.
 
+![Lab screenshot](https://i.imgur.com/uB0cBMd.png)
+
+![Lab screenshot](https://i.imgur.com/b4cV3aq.png)
+
 ## Phase 4: Client Machine Setup
 
 ### Step 8: Create Windows 10 Client VM (Client1)
@@ -187,6 +208,8 @@ I created a Windows 10 virtual machine with the following configuration:
 
 I then installed Windows 10.
 
+![Lab screenshot](https://i.imgur.com/DfxpdF9.png)
+
 ### Step 9: Join Client1 to the Domain
 
 On Client1:
@@ -200,6 +223,8 @@ On Client1:
 * Logged in using a domain account
 
 This confirmed successful communication with Active Directory.
+
+![Lab screenshot](https://i.imgur.com/PjRtHaK.png)
 
 ## Final Validation
 
@@ -215,6 +240,8 @@ The lab was considered successful after verifying:
 
 * Users appeared in Active Directory
 
+ ![Lab screenshot](https://i.imgur.com/GF4XJX3.png)
+ 
 ## Challenges & Troubleshooting
 
 Several common Active Directory and networking issues were encountered and resolved during the
